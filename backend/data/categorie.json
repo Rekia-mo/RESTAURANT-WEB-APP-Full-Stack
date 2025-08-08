@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Breakfast",
+    "imageURL": "/categories/icon1",
+    "description": "Fresh, hearty, and energizing dishes to start your day right."
+  },
+  {
+    "name": "Main Dishes",
+    "imageURL": "/categories/icon2",
+    "description": "Satisfying meals crafted with care, perfect for lunch or dinner."
+  },
+  {
+    "name": "Drinks",
+    "imageURL": "/categories/icon3",
+    "description": "Refreshing beverages to complement every bite and mood."
+  },
+  {
+    "name": "Desserts",
+    "imageURL": "/categories/icon4",
+    "description": "Sweet treats and indulgent flavors to end your meal on a perfect note."
+  }
+]

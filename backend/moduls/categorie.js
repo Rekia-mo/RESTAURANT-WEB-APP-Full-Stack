@@ -4,13 +4,13 @@ const mongoose = require('mongoose');
 const categorieSchema = new mongoose.Schema({
   name:{
     type: String,
-    require: true,
+    required: true,
     maxlength: 100
   },
   imageURL: String,
   description:{
     type: String,
-    require: true,
+    required: true,
     minlength: 5
   }
 });

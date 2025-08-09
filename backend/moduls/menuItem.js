@@ -4,26 +4,26 @@ const mongoose = require('mongoose');
 const menuItemSchema = new mongoose.Schema({
   name:{
     type: String,
-    require: true,
+    required: true,
     maxlength: 100
   },
   imageURL: {
     type:String,
-    require: false
+    required: false
   },
   description:{
     type: String,
-    require: true,
+    required: true,
     minlength: 5
   },
   price: {
     type: Number,
-    require: true  
+    required: true  
   },
   categorie: {
     type: mongoose.Schema.Types.ObjectId, 
     ref:'Categorie',
-    require: false
+    required: false
   }
 });
 

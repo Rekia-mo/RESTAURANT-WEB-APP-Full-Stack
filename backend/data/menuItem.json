@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Fried Eggs",
+    "imageURL": "/menuItems/eggs.png",
+    "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+    "price": 9.99,
+    "categorie": "68962bbf88f6cf09211711d2"
+  },
+  {
+    "name": "Hawaiian Pizza",
+    "imageURL": "/menuItems/pizza.png",
+    "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+    "price": 15.99,
+    "categorie": "68962bbf88f6cf09211711d3"
+  },
+  {
+    "name": "Martinez Cocktail",
+    "imageURL": "/menuItems/mohito.png",
+    "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+    "price": 7.25,
+    "categorie": "68962bbf88f6cf09211711d4"
+  },
+  {
+    "name": "Butterscotch Cake",
+    "imageURL": "/menuItems/carammelCake.png",
+    "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+    "price": 20.99,
+    "categorie": "68962bbf88f6cf09211711d5"
+  },
+  {
+    "name": "Mint Lemonade",
+    "imageURL": "/menuItems/QJuse.png",
+    "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+    "price": 5.89,
+    "categorie": "68962bbf88f6cf09211711d4"
+  },
+  {
+    "name": "Chocolate Icecream",
+    "imageURL": "/menuItems/iceCream.png",
+    "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+    "price": 18.05,
+    "categorie": "68962bbf88f6cf09211711d5"
+  },
+  {
+    "name": "Cheese Burger",
+    "imageURL": "/menuItems/berger.png",
+    "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+    "price": 12.55,
+    "categorie": "68962bbf88f6cf09211711d3"
+  },
+  {
+    "name": "Classic Waffles",
+    "imageURL": "/menuItems/waffels.png",
+    "description": "Made with eggs, lettuce, salt, oil and other ingredients.",
+    "price": 12.99,
+    "categorie": "68962bbf88f6cf09211711d2"
+  }
+  
+]

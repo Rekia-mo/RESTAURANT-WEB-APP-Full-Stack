@@ -23,11 +23,15 @@ const userSchema = new mongoose.Schema({
     required: true,
     minlength: 5,
     maxlength:500
-  }
+  },
+  isVerified:{
+    type: Boolean,
+    default: false
+  },
 });
 
 userSchema.methods.generateAuthToken = function(){
-  const token = jwt.sign({_id: this.id}, config.get('jwtPrivateKey'));
+  const token = jwt.sign({_id: this.id}, config.get('jwtPrivateKey'), { expiresIn: '1h' }  );
   return token;
 }
 

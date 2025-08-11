@@ -2,9 +2,16 @@ const express = require('express');
 const router = express.Router();
 const {User, validateUser} = require('../moduls/user.js'); 
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
 const _ = require('lodash');
-const config = require('config');
+// const nodemailer = require('nodemailer');
+
+// const transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: 'rmansourouahchia@gmail.com',
+//     pass: 'rekia!@#$%'
+//   }
+// })
 
 router.post('/', async(req,res)=>{
   const error = validateUser(req.body);
@@ -24,10 +31,28 @@ router.post('/', async(req,res)=>{
   });
 
   await user.save();
-  
+   
   //generate web token 
   const token = user.generateAuthToken();
-  
+
+  // const verificationLink = `http://localhost:3000/api/verify?token=${verificationToken}`;
+
+  // const mailOptions = {
+  //   from: ' rmansourouahchia@gmail.com',
+  //   to: user.email,
+  //   subject: ' verify your email',
+  //   html: `Click <a href="${verificationLink}">here</a> to verify your email.`
+  // }
+
+  // transporter.sendMail(mailOptions, (err, info)=>{
+  //   if(err){
+  //     console.error('Error sending email: ', err);
+  //     return res.status(500).send('Failed to send verification email.');
+  //   }
+  //   console.log('Email sent: ', info);
+  //   res.send('Registration successful! Please check your email to verify your account.');
+  // })
+
   res.header('x-auth-token', token).send(_.pick(user, ['_id', 'name', 'email']));
 
 })

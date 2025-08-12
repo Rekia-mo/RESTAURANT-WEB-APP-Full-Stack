@@ -1,22 +1,20 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Moo+Lah+Lah&family=Overpass:ital,wght@0,100..900;1,100..900&family=Pattaya&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik+Bubbles&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400..900&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&display=swap");
-
-.maxContainer {
+.max-container {
   max-width: 1440px;
   margin: 0 auto;
 }
 
 .padding {
-  @apply sm:px-16 px-8 sm:py-24 py-12;
+  @apply sm:px-38 px-14 sm:py-24 py-12;
 }
 
 .padding-x {
-  @apply sm:px-16 px-8;
+  @apply sm:px-33 px-8;
 }
 
 .padding-y {
@@ -43,6 +41,21 @@
   @apply text-slate-500 text-lg leading-7;
 }
 
+
+
+.dm-sans-400 {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:400;
+  font-style: normal;
+}
+
+.playfair-display-400 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 1000;
+  font-style: italic;
+}
 @theme {
   --color-rouge-brick: #AD343E; 
   --color-oliv-07: #2C2F24;

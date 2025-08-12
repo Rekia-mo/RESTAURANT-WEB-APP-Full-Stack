@@ -52,10 +52,11 @@
 
 .playfair-display-400 {
   font-family: "Playfair Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 1000;
-  font-style: italic;
+  /* font-optical-sizing: auto; */
+  /* font-weight: 1000; */
+  /* font-style: italic; */
 }
+
 @theme {
   --color-rouge-brick: #AD343E; 
   --color-oliv-07: #2C2F24;

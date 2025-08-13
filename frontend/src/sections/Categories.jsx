@@ -35,12 +35,13 @@ const [categories, setCategories] = useState([]);
   },[])
 
   return (
-    <section id='Ctegories' className='flex justify-center items-center flex-col gap-13'>
+    <section id='Ctegories' className='flex justify-center items-center flex-col w-full gap-13'>
+
       <h1 className='playfair-display-400 text-5xl text-oliv-07 '>
         Browse Our Menu
       </h1>
 
-      <div className='flex flex-row gap-5'>
+      <div className='grid grid-cols-4 gap-20 max-xl:grid-cols-2 max-xl:gap-10  max-md:grid-cols-1'>
         {
           categories.map((categorie,_)=>(
             <CategorieCart

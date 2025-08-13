@@ -2,7 +2,7 @@ import React from 'react'
 
 function CategorieCart({_id, description, imageURL, name}) {
   return (
-    <div className='flex flex-col w-[240px] h-[300px] px-5 text-center justify-center items-center gap-4 border-2 border-[#DBDFD0] rounded-2xl hover:bg-bg-gray transition duration-200 ease-in-out'>
+    <div className='flex flex-col w-[240px] h-[300px] px-3 text-center justify-center items-center gap-4 border-2 border-[#DBDFD0] rounded-2xl hover:bg-bg-gray transition duration-200 ease-in-out'>
 
       <img 
       src={`http://localhost:3000${imageURL}`} 

@@ -4,7 +4,7 @@ import bg from '../assets/images/bg.png';
 function Hero() {
   return (
     <section id="hero" 
-    className='w-full  max-container bg-cover bg-center h-[90vh] w-screen flex justify-center items-center' 
+    className='max-container bg-cover bg-center h-[90vh] w-screen flex justify-center items-center' 
     style={{ backgroundImage: `url(${bg})` }}>
 
       <div className="flex flex-col text-center justify-center item-center gap-5">

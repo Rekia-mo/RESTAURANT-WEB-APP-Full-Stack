@@ -10,14 +10,14 @@ import {
 function MainPg() {
   return (
     <>
-      <main className='relative overflow-auto scrollbar-hide'>
-        <section className='xl:padding-l wide:padding-r '>
+      <main className='relative overflow-auto scrollbar-hide scroll-smooth h-screen'>
+        <section className='xl:padding-l wide:padding-r ' id='Home'>
           <Hero/>
         </section>
-        <section className='padding'>
+        <section className='padding' id='Menu'>
           <Categories/>
         </section>
-        <section className='bg-bg-gray padding'>
+        <section id='Servises' className='bg-bg-gray padding'>
           <Servises/>
         </section>
         <section className='padding'>

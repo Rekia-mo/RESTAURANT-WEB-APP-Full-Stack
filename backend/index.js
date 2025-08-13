@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const categorie = require('./routes/categorie.js');
 const menuItem = require('./routes/menuItem.js');
 const user = require('./routes/user.js');
@@ -11,6 +12,7 @@ require('./startup/db.js')();
 
 app.use(express.json());
 app.use(express.static('public'));
+app.use(cors()); 
 
 //routs
 app.use('/api/categorie', categorie);

@@ -4,6 +4,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 .max-container {
   max-width: 1440px;
   margin: 0 auto;
@@ -41,12 +43,10 @@
   @apply text-slate-500 text-lg leading-7;
 }
 
-
-
 .dm-sans-400 {
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
-  font-weight:400;
+  /* font-weight:400; */
   font-style: normal;
 }
 
@@ -57,6 +57,15 @@
   /* font-style: italic; */
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.dm-sans-ver2{
+  font-family: "DM Sans", sans-serif;
+  /* font-optical-sizing: auto; */
+  /* font-style: normal; */
+}
 @theme {
   --color-rouge-brick: #AD343E; 
   --color-oliv-07: #2C2F24;

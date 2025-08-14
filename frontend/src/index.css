@@ -129,18 +129,18 @@
   box-shadow: rgb(0 0 0 / 8%) 0 -1px;
 }
 
-.form-section a {
+.form-section span {
   font-weight: bold;
   color: #AD343E;
   transition: color .3s ease;
 }
 
-.form-section a:hover {
+.form-section span:hover {
   color: #ad343ec2;
   text-decoration: underline;
 }
 
-.form-section a:focus {
+.form-section span:focus {
   color: #AD343E;
   text-decoration: underline;
 }

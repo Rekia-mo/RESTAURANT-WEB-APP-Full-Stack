@@ -1,11 +1,56 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const API_BASE_URL = 'http://localhost:3000/api/user';
+
 
 function SignUp() {
+
+  const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [token,setToken] = useState(localStorage.getItem('token'));
+
+  function handelName(e){
+    setName(e.target.value);
+  }
+
+  function handelEmail(e){
+    setEmail(e.target.value);
+  }
+
+  function handelPasword(e){
+    setPassword(e.target.value);
+  }
+
+  const handelSignUp = async(name, email, password)=>{
+    try{
+      const response = await fetch(API_BASE_URL, {
+        method: 'POST',
+        headers:{
+          "Content-Type": "application/json",
+          accept:'application/json'
+        },
+        body:JSON.stringify({ name, email, password }) 
+      });
+
+      const data = await response.text();
+
+      if(!response.ok) {
+        alert(data|| 'log in faild');
+        throw new Error(data);
+      }
+      
+      localStorage.setItem("token", data);
+      alert('Logged in!');
+      setToken(data);
+    }catch(err){
+      console.log(err);
+    }
+  }
 
   return (
     <section className='flex justify-center items-center text-center h-screen'>
@@ -16,15 +61,19 @@ function SignUp() {
 
             <div className="form-container">
 
-              <input onChange={()=>{}} type="text" className="input" placeholder="Full Name"/>
+              <input onChange={handelName} type="text" className="input" placeholder="Full Name" name="name" autoComplete="name"/>
 
-              <input type="email" className="input" placeholder="Email"/>
+              <input type="email" onChange={handelEmail} className="input" placeholder="Email" name="email" autoComplete="email"/>
 
-              <input type="password" className="input" placeholder="Password"/>
+              <input type="password" onChange={handelPasword} className="input" placeholder="Password" name="password"  autoComplete="new-password" />
 
             </div>
 
-            <button type="button">
+            <button 
+            type="button"
+            onClick={()=>{handelSignUp(name, email, password);
+              token && navigate('/menu')
+            }}>
               Sign up
             </button>
 
@@ -34,16 +83,13 @@ function SignUp() {
 
           <p>
             Have an account? 
-            <a>
-              <Link to={'/logIn'}>
+            <span><Link to={'/logIn'}>
               Log in
-              </Link>
-            </a> 
-            <a className='ml-10'>
-              <Link to={'/'}>
+            </Link></span>
+
+            <span className='ml-10'><Link to={'/'}>
                 Back Home
-              </Link>
-            </a> 
+            </Link></span> 
           </p>
         </div>
       </div>

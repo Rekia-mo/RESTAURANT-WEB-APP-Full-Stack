@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 function Hero() {
   const navigate = useNavigate();
+    
+  const token = localStorage.getItem('token');
 
   return (
     <section id="hero" 
@@ -18,7 +20,7 @@ function Hero() {
 
         <div>
           <button 
-          onClick={()=>{navigate('/menu')}}
+          onClick={()=>{token? navigate('/menu') : navigate('/signUp')}}
           className='bg-rouge-brick text-white px-6 py-4 hover:opacity-80 active:opacity-100 text-[12px] font-semibold rounded-4xl transition duration-300 ease-in-out cursor-pointer'>
           Explore Menu
         </button>

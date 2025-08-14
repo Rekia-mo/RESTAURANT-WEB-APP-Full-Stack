@@ -6,7 +6,7 @@ function Nav() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "#Servises", label: "Services" },
-    { href: "/menu", label: "Menu" },
+    { href: "/#Menu", label: "Menu" },
     { href: "#Contact", label: "Contact" }
   ]
 

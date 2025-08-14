@@ -10,9 +10,12 @@ const log = require('./routes/log.js');
 //connect to the db 
 require('./startup/db.js')();
 
+app.use(cors({
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+})); 
 app.use(express.json());
 app.use(express.static('public'));
-app.use(cors()); 
 
 //routs
 app.use('/api/categorie', categorie);

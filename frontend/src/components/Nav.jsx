@@ -1,15 +1,19 @@
 import React from 'react'
 import logo from "../assets/icons/Vector.png"
+import { useNavigate, Outlet } from 'react-router-dom';
 
 function Nav() {
   const navLinks = [
-    { href: "#home", label: "Home" },
+    { href: "/", label: "Home" },
     { href: "#Servises", label: "Services" },
-    { href: "#Menu", label: "Menu" },
+    { href: "/menu", label: "Menu" },
     { href: "#Contact", label: "Contact" }
   ]
 
+  const navigate = useNavigate();
+
   return (
+    <>
     <header className='padding-x pt-4 pb-4 z-10 w-full bg-white shadow-[0_10px_15px_rgba(0,0,0,0.1)]'>
       <nav className='flex flex-row justify-between items-center max-container '>
         <a 
@@ -36,12 +40,15 @@ function Nav() {
           ))}
         </ul>
 
-          <button className='font-semibold text-oliv-07 border-oliv-07 border-2 py-2 px-4 rounded-4xl hover:text-white text-[14px] dm-mono-medium hover:bg-oliv-07 active:opacity-80 transition duration-300 ease-in-out cursor-pointer'>
+          <button className='font-semibold text-oliv-07 border-oliv-07 border-2 py-2 px-4 rounded-4xl hover:text-white text-[14px] dm-mono-medium hover:bg-oliv-07 active:opacity-80 transition duration-300 ease-in-out cursor-pointer'
+          onClick={()=>navigate('/signUp')}>
             Sign up
           </button>
 
       </nav>
     </header>
+     <Outlet />
+    </>
   )
 }
 

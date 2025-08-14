@@ -5,13 +5,13 @@ import {
   Servises,
   CustomerRev,
   Footer
-} from "./sections/index"
+} from '../sections/index.js'
 
 function MainPg() {
   return (
     <>
       <main className='relative overflow-auto scrollbar-hide scroll-smooth h-screen'>
-        <section className='xl:padding-l wide:padding-r ' id='home'>
+        <section className='xl:padding-l wide:padding-r '>
           <Hero/>
         </section>
         <section className='padding' id='Menu'>

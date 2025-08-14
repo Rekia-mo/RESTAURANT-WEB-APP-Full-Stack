@@ -1,7 +1,10 @@
 import React from 'react';
 import bg from '../assets/images/bg.png';
+import { useNavigate } from 'react-router-dom';
 
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section id="hero" 
     className='max-container bg-cover bg-center h-[90vh] w-screen flex justify-center items-center' 
@@ -14,7 +17,9 @@ function Hero() {
         <p className='text-oliv-07 '>Discover delectable cuisine and unforgettable moments <br /> in our welcoming, culinary haven.</p>
 
         <div>
-          <button className='bg-rouge-brick text-white px-6 py-4 hover:opacity-80 active:opacity-100 text-[12px] font-semibold rounded-4xl transition duration-300 ease-in-out cursor-pointer'>
+          <button 
+          onClick={()=>{navigate('/menu')}}
+          className='bg-rouge-brick text-white px-6 py-4 hover:opacity-80 active:opacity-100 text-[12px] font-semibold rounded-4xl transition duration-300 ease-in-out cursor-pointer'>
           Explore Menu
         </button>
         </div>

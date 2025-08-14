@@ -1,6 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 function CategorieCart({_id, description, imageURL, name}) {
+  const navigate = useNavigate();
+
   return (
     <div className='flex flex-col w-[240px] h-[300px] px-3 text-center justify-center items-center gap-4 border-2 border-[#DBDFD0] rounded-2xl hover:bg-bg-gray transition duration-200 ease-in-out'>
 
@@ -18,7 +22,9 @@ function CategorieCart({_id, description, imageURL, name}) {
         {description}
       </p>
     
-       <button className='hover:bg-rouge-brick hover:text-white  text-rouge-brick px-4 py-3  active:opacity-80 text-[13px] font-bold rounded-4xl transition duration-200 ease-in-out cursor-pointer'>
+       <button 
+       onClick={()=>{navigate('/menu')}}
+       className='hover:bg-rouge-brick hover:text-white  text-rouge-brick px-4 py-3  active:opacity-80 text-[13px] font-bold rounded-4xl transition duration-200 ease-in-out cursor-pointer'>
           Explore Menu
         </button>
     </div>

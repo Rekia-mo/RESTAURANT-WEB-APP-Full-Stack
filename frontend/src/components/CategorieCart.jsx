@@ -18,7 +18,7 @@ function CategorieCart({_id, description, imageURL, name}) {
         {description}
       </p>
     
-       <button className='hover:bg-rouge-brick hover:text-white bg-white text-rouge-brick px-4 py-3  active:opacity-80 text-[13px] font-bold rounded-4xl transition duration-200 ease-in-out cursor-pointer'>
+       <button className='hover:bg-rouge-brick hover:text-white  text-rouge-brick px-4 py-3  active:opacity-80 text-[13px] font-bold rounded-4xl transition duration-200 ease-in-out cursor-pointer'>
           Explore Menu
         </button>
     </div>

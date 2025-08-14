@@ -11,7 +11,7 @@ function MainPg() {
   return (
     <>
       <main className='relative overflow-auto scrollbar-hide scroll-smooth h-screen'>
-        <section className='xl:padding-l wide:padding-r ' id='Home'>
+        <section className='xl:padding-l wide:padding-r ' id='home'>
           <Hero/>
         </section>
         <section className='padding' id='Menu'>

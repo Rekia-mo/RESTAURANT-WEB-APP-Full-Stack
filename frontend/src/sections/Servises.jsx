@@ -10,13 +10,13 @@ function Servises() {
 
   return (
     <section 
-    className=' flex justify-between items-center felx-row gap-15'>
+    className=' flex justify-between items-center felx-row gap-15 max-lg:flex-col-reverse'>
 
       <img 
       src={galery} 
       alt="galery"
       width={580}
-      height={580} />
+      height={580} className='max-xl:w-[400px]' />
 
       <div className='flex flex-col text-start justify-start items-start gap-4'>
         <h1 className='playfair-display-400 text-5xl text-oliv-07 '>

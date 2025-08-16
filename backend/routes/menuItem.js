@@ -6,7 +6,7 @@ const log = require('../middlewarr/log.js');
 //GET ALL
 router.get('/',log, async(req, res)=>{
   try{
-    const menuItem = await MenuItem.find().populate('categorie').sort('name');
+    const menuItem = await MenuItem.find().populate('categorie');
     res.send(menuItem);
 
   }catch(ex){

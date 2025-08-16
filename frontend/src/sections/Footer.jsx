@@ -2,7 +2,9 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div>Footer</div>
+    <div className='xl:px-30 max-xl:px-8 sm:py-20 py-12 '>
+      
+    </div>
   )
 }
 

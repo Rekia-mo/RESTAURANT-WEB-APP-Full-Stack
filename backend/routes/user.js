@@ -15,11 +15,11 @@ const _ = require('lodash');
 
 router.post('/', async(req,res)=>{
   const error = validateUser(req.body);
-  if(error) return res.status(400).send(error.details[0].message);
+  if(error) return res.status(400).json({'message':error.details[0].message});
 
   let user = await User.findOne({email: req.body.email});
   console.log(user);
-  if(user) return res.status(400).send('email alredy exist');
+  if(user) return res.status(400).json({'message':'email alredy exist'});
 
   const salt = await bcrypt.genSalt(10);
   const password = await bcrypt.hash(req.body.password, salt);

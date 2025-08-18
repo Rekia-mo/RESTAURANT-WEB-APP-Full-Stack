@@ -18,9 +18,9 @@ function Footer() {
   const utility = ['Start Here', 'Styleguide', 'Password Protected', '404 Not Found', 'Licenses', 'Changelog', 'View More']
 
   return (
-    <div id='Contact' className='bg-[#474747] sm:py-20 py-10 align-top sm:px-30 px-10 flex flex-col'>
+    <section id='Contact' className='bg-[#474747] sm:py-20 py-10 align-top sm:px-30 px-10 flex flex-col'>
 
-      <div className='flex flex-row gap-28 mb-[80px]'>
+      <div className='flex flex-row gap-28 mb-[80px] max-lg:grid max-lg:grid-cols-2 max-lg:gap-30 max-sm:gap-20'>
 
         <div className='flex flex-col gap-7'>
 
@@ -71,7 +71,7 @@ function Footer() {
       <p className='text-[#ADB29E] text-center text-[14px] mt-6'>
         Copyright &copy; 2025 Hashtag Developer. All Rights Reserved	
       </p>
-    </div>
+    </section>
   )
 }
 

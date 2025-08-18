@@ -12,6 +12,7 @@ function SignUp() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [err, setErr] = useState('');
 
   function handelName(e){
     setName(e.target.value);
@@ -39,15 +40,15 @@ function SignUp() {
       const data = await response.json();
 
       if(!response.ok) {
-        alert(response|| 'log in faild');
-        throw new Error(response);
+        setErr(data.message);
+        throw new Error('faid to log in');
       }
       
       localStorage.setItem("token", data.token);
       
       navigate('/menu')
     }catch(err){
-      console.log(err);
+      console.log('catch block: ',err);
     }
   }
 
@@ -67,7 +68,10 @@ function SignUp() {
               <input type="password" onChange={handelPasword} className="input" placeholder="Password" name="password"  autoComplete="new-password" />
 
             </div>
-
+            
+            <p className='text-rouge-brick text-[12px]'>
+              {err}
+            </p>
             <button 
             type="button"
             onClick={()=>{handelSignUp(name, email, password);

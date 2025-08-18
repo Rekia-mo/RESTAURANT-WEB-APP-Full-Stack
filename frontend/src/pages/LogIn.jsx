@@ -10,6 +10,7 @@ function LogIn() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [err, setErr] = useState('');
 
   function handelEmail(e){
     setEmail(e.target.value);
@@ -33,8 +34,8 @@ function LogIn() {
       const data = await response.json();
 
       if(!response.ok) {
-        alert(data|| 'log in faild');
-        throw new Error(data);
+        setErr(data.message);
+        throw new Error('faid to log in');
       }
       
       localStorage.setItem("token", data.token);
@@ -68,6 +69,10 @@ function LogIn() {
               <input type="password" onChange={handelPasword} className="input" placeholder="Password" name="password" autoComplete="current-password"/>
 
             </div>
+
+            <p className='text-rouge-brick text-[12px]'>
+              {err}
+            </p>
 
             <button onClick={()=>{
                 handelLogin(email, password);

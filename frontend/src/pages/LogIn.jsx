@@ -10,7 +10,6 @@ function LogIn() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [token,setToken] = useState(localStorage.getItem('token'));
 
   function handelEmail(e){
     setEmail(e.target.value);
@@ -31,17 +30,16 @@ function LogIn() {
         body:JSON.stringify({email, password }) 
       });
 
-      const data = await response.text();
+      const data = await response.json();
 
       if(!response.ok) {
         alert(data|| 'log in faild');
         throw new Error(data);
       }
       
-      localStorage.setItem("token", data);
-      alert('Logged in!');
-      setToken(data);
-
+      localStorage.setItem("token", data.token);
+      navigate('/menu');
+      
     }catch(err){
       console.log(err);
     }
@@ -73,7 +71,6 @@ function LogIn() {
 
             <button onClick={()=>{
                 handelLogin(email, password);
-                if(token) navigate('/menu');
               }
             } 
             type="button">

@@ -12,7 +12,7 @@ require('./startup/db.js')();
 
 app.use(cors({
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization', 'x-auth-token']
 })); 
 app.use(express.json());
 app.use(express.static('public'));

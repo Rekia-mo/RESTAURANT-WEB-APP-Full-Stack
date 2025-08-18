@@ -2,32 +2,41 @@ import React, { useState } from 'react'
 import MenuItemsCart from '../components/MenuItemsCart';
 import { useEffect } from 'react';
 import { Footer } from '../sections';
+import { useNavigate } from 'react-router-dom';
+
 
 const API_BASE_URL = 'http://localhost:3000/api/menuItem';
 
-const API_KEY = localStorage.getItem('token');
-
-const API_OPTIONS = {
-  method:'GET',
-  headers:{
-    accept:'application/json',
-    Authorization: `Bearer ${API_KEY}` 
-  }
-};
-
 function Menu() {
   const [menuItems, setMenuItems] = useState([]);
+  const navigate = useNavigate();
 
   const fetchMenuItems = async()=>{
     try{
+      const token = localStorage.getItem('token');
+
+      const API_OPTIONS = {
+        method:'GET',
+        headers:{
+          accept:'application/json',
+          "x-auth-token": `Bearer ${token}` 
+      }
+};
       const response  = await fetch(API_BASE_URL, API_OPTIONS);  
       
-      if(!response.ok) throw new Error(await response.json());
-
       const data = await response.json();
+
+      if(!response.ok) throw new Error('fail to fetch data');
+
       setMenuItems(data);
     }catch(err){
+
       console.log(err);
+
+      if(err.message.includes("invalid token")){
+        // localStorage.removeItem("token");
+        navigate('/signUp')
+      } 
     }
   }
 
@@ -37,7 +46,7 @@ function Menu() {
 
   return (
     <>
-      <section className='xl:px-30 max-xl:px-8 sm:py-20 py-12 flex flex-col justify-center items-center gap-2 max-sm:gap-5'>
+      <section className='xl:px-30 max-xl:px-8 sm:py-20 py-12 flex flex-col justify-center items-center gap-2 max-sm:gap-5 mb-30'>
         <h1 className='playfair-display-400 text-center leading-none text-oliv-07 max-lg:text-[75px] max-sm:text-[60px] text-[90px]'>
           Our Menu
         </h1>
@@ -59,7 +68,7 @@ function Menu() {
       </section>
 
 
-      <section className='bg-[#474747] padding-x padding-y pb-8'>
+      <section>
             <Footer/>
       </section>
     </>

@@ -5,7 +5,7 @@ import { useNavigate, Outlet } from 'react-router-dom';
 function Nav() {
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "#Servises", label: "Services" },
+    { href: "/#Servises", label: "Services" },
     { href: "/#Menu", label: "Menu" },
     { href: "#Contact", label: "Contact" }
   ]

@@ -12,7 +12,6 @@ function SignUp() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [token,setToken] = useState(localStorage.getItem('token'));
 
   function handelName(e){
     setName(e.target.value);
@@ -37,16 +36,16 @@ function SignUp() {
         body:JSON.stringify({ name, email, password }) 
       });
 
-      const data = await response.text();
+      const data = await response.json();
 
       if(!response.ok) {
-        alert(data|| 'log in faild');
-        throw new Error(data);
+        alert(response|| 'log in faild');
+        throw new Error(response);
       }
       
-      localStorage.setItem("token", data);
-      alert('Logged in!');
-      setToken(data);
+      localStorage.setItem("token", data.token);
+      
+      navigate('/menu')
     }catch(err){
       console.log(err);
     }
@@ -72,7 +71,6 @@ function SignUp() {
             <button 
             type="button"
             onClick={()=>{handelSignUp(name, email, password);
-              token && navigate('/menu')
             }}>
               Sign up
             </button>

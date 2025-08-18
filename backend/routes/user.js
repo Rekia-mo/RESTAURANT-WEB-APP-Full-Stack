@@ -34,7 +34,12 @@ router.post('/', async(req,res)=>{
     await user.save();
     //generate web token 
     const token = user.generateAuthToken();
-    res.send(token);
+    
+    res.json({ 
+      success: true,
+      token: token
+    });
+    
   }catch(ex){
     for(field in ex.error)
       console.log(ex.errors[field].message);

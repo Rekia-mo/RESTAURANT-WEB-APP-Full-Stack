@@ -23,7 +23,7 @@ function MainPg() {
         <section className='padding'>
           <CustomerRev/>
         </section>
-        <section className='bg-[#474747] padding-x padding-y pb-8'>
+        <section>
           <Footer/>
         </section>
       </main>

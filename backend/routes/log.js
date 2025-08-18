@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const _ = require('lodash');
 const Joi = require('joi');
 
+
 router.post('/', async(req,res)=>{
   const error = validate(req.body);
   if(error) return res.status(400).send(error.details[0].message);
@@ -20,7 +21,10 @@ router.post('/', async(req,res)=>{
   //generate web token 
   const token = user.generateAuthToken();
 
-  res.send(token);
+  res.json({ 
+    success: true,
+    token: token
+  })
 
 })
 

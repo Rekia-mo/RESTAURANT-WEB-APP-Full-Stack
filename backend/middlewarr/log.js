@@ -2,9 +2,13 @@ const jwt = require('jsonwebtoken');
 const config = require ('config');
 
 module.exports = function log(req, res, next){
-  // const token = req.header('x-auth-token');
-  const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1];
+  const authHeader = req.header('x-auth-token');
+  
+    if(authHeader && authHeader.startsWith('Bearer')){
+      token = authHeader.split(' ')[1];
+    }else{
+      token = authHeader
+    }
 
   if(!token) return res.status(401).send('access dinid, No token provided');
 

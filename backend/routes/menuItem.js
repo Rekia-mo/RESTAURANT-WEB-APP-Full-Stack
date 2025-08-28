@@ -11,7 +11,7 @@ router.get('/',log, async(req, res)=>{
 
   }catch(ex){
     for(field in ex.errors)
-    console.log(ex.errors[field].message);
+    res.json({'messge':ex.errors[field].message});
   }
 });
 

@@ -70,7 +70,7 @@ function LogIn() {
 
             </div>
 
-            <p className='text-rouge-brick text-[12px]'>
+            <p className='text-rouge-brick font-semibold text-[12px]'>
               {err}
             </p>
 

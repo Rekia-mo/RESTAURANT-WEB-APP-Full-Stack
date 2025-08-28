@@ -6,11 +6,11 @@ const {Categorie} = require('../moduls/categorie.js');
 router.get('/', async(req, res)=>{
   try{
     const categories = await Categorie.find().sort('imageURL');
-  res.send(categories);
+    res.send(categories);
 
   }catch(ex){
     for(field in ex.errors)
-    console.log(ex.errors[field].message);
+    res.json({'messge':ex.errors[field].message});
   }
 });
 

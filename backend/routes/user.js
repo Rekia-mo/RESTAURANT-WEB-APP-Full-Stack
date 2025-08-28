@@ -18,7 +18,7 @@ router.post('/', async(req,res)=>{
   if(error) return res.status(400).json({'message':error.details[0].message});
 
   let user = await User.findOne({email: req.body.email});
-  console.log(user);
+
   if(user) return res.status(400).json({'message':'email alredy exist'});
 
   const salt = await bcrypt.genSalt(10);
@@ -42,7 +42,7 @@ router.post('/', async(req,res)=>{
     
   }catch(ex){
     for(field in ex.error)
-      console.log(ex.errors[field].message);
+      res.json({'messge':ex.errors[field].message});
 }
  
 

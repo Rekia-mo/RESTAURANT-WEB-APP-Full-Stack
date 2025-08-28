@@ -48,7 +48,7 @@ function SignUp() {
       
       navigate('/menu')
     }catch(err){
-      console.log('catch block: ',err);
+      console.log(err);
     }
   }
 
@@ -69,7 +69,7 @@ function SignUp() {
 
             </div>
             
-            <p className='text-rouge-brick text-[12px]'>
+            <p className='text-rouge-brick font-semibold text-[12px]'>
               {err}
             </p>
             <button 

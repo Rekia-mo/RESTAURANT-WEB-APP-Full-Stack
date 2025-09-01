@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const Joi = require('joi');
 
 const cartSchema = new mongoose.Schema({
   userId:{
@@ -18,7 +18,7 @@ const cartSchema = new mongoose.Schema({
     required: true,
     default: 0
   }
-});
+}, { timestamps: true });
 
 cartSchema.methods.calcTotal = async function(){
   let total = 0;
@@ -32,6 +32,16 @@ cartSchema.methods.calcTotal = async function(){
   return total;
 }
 
+function validateCart (cart){
+  const schema = Joi.object({
+      menuItemId: Joi.required(),
+      quantity: Joi.number().min(1).required()
+  });
+  const {error} = schema.validate(cart);
+  return error;
+}
+
 const Cart = mongoose.model('cart', cartSchema);
 
 exports.Cart = Cart;
+exports.validate = validateCart;

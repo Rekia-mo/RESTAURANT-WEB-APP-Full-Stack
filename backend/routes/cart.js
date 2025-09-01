@@ -1,11 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const { Cart } = require('../moduls/cart.js');
+const { Cart, validate } = require('../moduls/cart.js');
 const log = require('../middlewarr/log.js');
 
 //ADD ITEM TO CART
 router.post('/', log, async (req, res) => {
   try {
+    const error = validate(req.body);
+    console.log(error);
+    if(error) return res.status(400).json({'message': error.details[0].message});
+
     const userId = await req.user._id;
     const menuItemId = await req.body.menuItemId;
     const quantity = parseInt(req.body.quantity, 10) || 1;
@@ -46,8 +50,10 @@ router.post('/', log, async (req, res) => {
     });
 
   } catch (ex) {
-    for (field in ex.error)
-      res.json({ 'messge': ex.errors[field].message });
+    console.error(ex);
+    res.send(ex.message)
+    for (field in ex.errors)
+      res.send({ 'messge': ex.errors[field].message });
   }
 })
 

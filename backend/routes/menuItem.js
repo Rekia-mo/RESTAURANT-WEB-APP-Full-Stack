@@ -7,8 +7,11 @@ const mongoose = require('mongoose');
 //GET ALL
 router.get('/', log, async (req, res) => {
   try {
-    const menuItem = await MenuItem.find().populate('categorie');
-    res.send(menuItem);
+    const menuItems = await MenuItem.find().populate('categorie');
+    res.json({
+      success: true,
+      menuItems
+    });
 
   } catch (ex) {
     for (field in ex.errors)

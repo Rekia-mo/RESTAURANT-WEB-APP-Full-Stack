@@ -2,7 +2,7 @@ import React from 'react'
 
 function MenuItemsCart({_id, name, description, price, imageURL}) {
   return (
-    <div className='hover:bg-bg-gray transition duration-200 ease-in-out cursor-pointer flex flex-col justify-center items-center gap-4 border-[1.5px] border-[#DBDFD0] rounded-2xl'>
+    <div className='hover:bg-gray-100 transition duration-200 ease-in-out cursor-pointer flex flex-col justify-center items-center gap-4 border-[1.5px] border-[#DBDFD0] rounded-2xl'>
       <img 
       className='w-full'
       src={`http://localhost:3000/${imageURL}`} 

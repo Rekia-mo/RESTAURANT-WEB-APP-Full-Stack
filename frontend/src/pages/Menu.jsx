@@ -3,6 +3,7 @@ import MenuItemsCart from '../components/MenuItemsCart';
 import { useEffect } from 'react';
 import { Footer } from '../sections';
 import { useNavigate } from 'react-router-dom';
+import Nav from '../components/Nav';
 
 
 function Menu() {
@@ -85,6 +86,7 @@ function Menu() {
 
   return (
     <>
+      <Nav/>
       <section className='xl:px-30 max-xl:px-8 sm:py-20 py-12 flex flex-col justify-center items-center gap-2 max-sm:gap-5 mb-30'>
         <h1 className='playfair-display-400 text-center leading-none text-oliv-07 max-lg:text-[75px] max-sm:text-[60px] text-[90px]'>
           Our Menu

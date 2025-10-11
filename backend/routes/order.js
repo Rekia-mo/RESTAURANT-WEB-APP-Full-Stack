@@ -20,9 +20,9 @@ router.post('/', log, async (req, res) => {
     let order = new Order({
       userId: req.user._id,
       items: cart.items,
-      total: cart.total,
+      total: total,
       address: req.body.address,
-      phone: req.body.phone,
+      phone: req.body.phone
     });
 
     cart.items = [];

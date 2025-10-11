@@ -6,10 +6,12 @@ import {
   CustomerRev,
   Footer
 } from '../sections/index.js'
+import Nav from '../components/Nav';
 
 function MainPg() {
   return (
     <>
+      <Nav/>
       <main className='relative overflow-auto scrollbar-hide scroll-smooth h-screen'>
         <section className='xl:padding-l wide:padding-r '>
           <Hero/>

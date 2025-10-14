@@ -22,7 +22,7 @@ function MenuItemsCart({_id, name, description, price, imageURL}) {
           {description}
         </p>
 
-        <button className='bg-rouge-brick text-white  px-15 py-2  active:opacity-90 text-[15px] hover:opacity-70 font-bold rounded-4xl transition duration-200 ease-in-out cursor-pointer mb-7'>
+        <button className='bg-rouge-brick text-white  px-15 py-2  active:opacity-90 text-[15px] hover:opacity-70 font-bold rounded-4xl transition duration-200 ease-in-out cursor-pointer shadow-md shadow-rouge-brick/30 mb-7'>
           Add Dish
         </button>
       </div>

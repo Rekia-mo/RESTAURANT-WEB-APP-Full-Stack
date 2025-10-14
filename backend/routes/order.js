@@ -14,7 +14,7 @@ router.post('/', log, async (req, res) => {
     const cart = await Cart.findOne({ userId: req.user._id }).populate('items.menuItem');
     if (!cart) return res.status(400).json({ 'message': 'Cart is empty' });
 
-    const total = cart.calcTotal();
+    const total = await cart.calcTotal();
     if (total == 0) return res.status(400).json({ 'message': 'Cart is empty' });
 
     let order = new Order({

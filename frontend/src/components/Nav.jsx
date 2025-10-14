@@ -2,8 +2,11 @@ import React from 'react'
 import logo from "../assets/icons/Vector.png"
 import { useNavigate, Outlet, useLocation, Link } from 'react-router-dom';
 import cartImage from '../assets/icons/serving.png'
+import { quantityCount } from '../utils/qtt';
 
-function Nav() {
+function Nav({cart}) {
+  let totalQuantity = quantityCount(cart);
+
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/#Servises", label: "Services" },
@@ -51,8 +54,6 @@ function Nav() {
           }
 
 
-
-
           {
             (location.pathname != '/') &&
             <>
@@ -66,8 +67,8 @@ function Nav() {
                   width={73} height={70}
                 >
                 </img>
-                <div className='absolute top-6 right-7.5 text-white text-[22px] font-bold'>
-                  3
+                <div className='absolute top-6 right-6.2 text-white text-[22px] font-bold'>
+                  {totalQuantity}
                 </div>
 
                 <div className='width-[73px] font-bold text-center text-oliv-07 text-[13px] absolute -bottom-1'>

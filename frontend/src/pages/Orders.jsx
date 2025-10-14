@@ -3,10 +3,10 @@ import Nav from '../components/Nav'
 import dishImg from '../assets/images/eggs.png'
 
 
-function Orders() {
+function Orders({cart}) {
   return (
     <>
-      <Nav />
+      <Nav cart={cart}/>
       <section className='relative overflow-auto scrollbar-hide scroll-smooth  xl:px-60 max-xl:px-8  py-12 flex flex-col justify-center gap-8 max-sm:gap-15  '>
 
         <h1 className='playfair-display-400 text-center leading-none text-oliv-07 max-lg:text-[50px] max-sm:text-[60px] text-[60px]'>

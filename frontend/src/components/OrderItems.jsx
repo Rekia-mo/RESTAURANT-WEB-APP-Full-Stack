@@ -1,6 +1,6 @@
 import React from 'react'
 
-function OrderItems({ menuItem, quantity }) {
+function OrderItems({ menuItem, quantity, addToCart }) {
   return (
     <>
       <div className='flex flex-row justify-start items-center gap-5 w-full'>
@@ -14,7 +14,10 @@ function OrderItems({ menuItem, quantity }) {
 
           <p>Quantity: {quantity}</p>
 
-          <button className='bg-rouge-brick text-white px-9 py-1.5  active:opacity-90 text-[14px] hover:opacity-70 font-bold rounded-3xl transition duration-200 ease-in-out cursor-pointer shadow-md shadow-rouge-brick/30'>
+          <button className='bg-rouge-brick text-white px-9 py-1.5  active:opacity-90 text-[14px] hover:opacity-70 font-bold rounded-3xl transition duration-200 ease-in-out cursor-pointer shadow-md shadow-rouge-brick/30'
+          onClick={()=>{
+            addToCart(menuItem._id)
+          }}>
             Add Dish
           </button>
         </div>

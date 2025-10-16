@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import { formatMoney } from '../utils/money';
 import OrderItems from './OrderItems';
 
-function Orders({ createdAt, total, _id, items }) {
+function Orders({ createdAt, total, _id, items, addToCart }) {
   return (
     <div className='flex flex-col gap-4 py-6 px-7 border-2 border-[#DBDFD0] rounded-2xl w-full '>
 
@@ -39,7 +39,7 @@ function Orders({ createdAt, total, _id, items }) {
       <div className='flex flex-col gap-13 justify-center items-start w-full py-7'>
         {
           items.map((orderItem) => (
-            <OrderItems key={orderItem._id} {...orderItem} />
+            <OrderItems key={orderItem._id} {...orderItem} addToCart={addToCart} />
           ))
         }
       </div>

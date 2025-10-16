@@ -12,7 +12,7 @@ function MainPg() {
   return (
     <>
       <Nav/>
-      <main className='relative overflow-auto scrollbar-hide scroll-smooth h-screen'>
+      <main className='relative mt-19 overflow-auto scrollbar-hide scroll-smooth h-screen'>
         <section className='xl:padding-l wide:padding-r '>
           <Hero/>
         </section>

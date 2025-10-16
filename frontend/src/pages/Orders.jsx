@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Nav from '../components/Nav'
 import Order from '../components/Order';
 
-function Orders({ cart }) {
+function Orders({ cart, addToCart }) {
 
   const [orders, setOrders] = useState([]);
   const API_BASE_URL = 'http://localhost:3000/api/order';
@@ -44,7 +44,7 @@ function Orders({ cart }) {
   return (
     <>
       <Nav cart={cart} />
-      <section className='relative overflow-auto scrollbar-hide scroll-smooth  xl:px-60 max-xl:px-8  py-12 flex flex-col justify-center gap-8 max-sm:gap-15  '>
+      <section className='relative mt-25 overflow-auto scrollbar-hide scroll-smooth  xl:px-60 max-xl:px-8  py-12 flex flex-col justify-center gap-8 max-sm:gap-15  '>
 
         <h1 className='playfair-display-400 text-center leading-none text-oliv-07 max-lg:text-[50px] max-sm:text-[60px] text-[60px]'>
           Orders
@@ -57,7 +57,7 @@ function Orders({ cart }) {
         <div className='flex flex-col justify-center items-start gap-12'>
           {
             orders&&orders.map((order)=>(
-              <Order key={order._id} {...order}/>
+              <Order key={order._id} {...order} addToCart={addToCart}/>
             ))
           }
 

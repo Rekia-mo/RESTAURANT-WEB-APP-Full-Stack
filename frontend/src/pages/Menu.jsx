@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import Nav from '../components/Nav';
 
 
-function Menu({cart}) {
+function Menu({cart, loadCart, addToCart}) {
   const [menuItems, setMenuItems] = useState([]);
   const navigate = useNavigate();
   const [active, setActive] = useState(null);
@@ -83,11 +83,10 @@ function Menu({cart}) {
   }, []);
 
 
-
   return (
     <>
       <Nav cart={cart}/>
-      <section className='relative overflow-auto scrollbar-hide scroll-smooth  xl:px-30 max-xl:px-8 sm:py-20 py-12 flex flex-col justify-center items-center gap-2 max-sm:gap-5 mb-30'>
+      <section className='relative mt-20 overflow-auto scrollbar-hide scroll-smooth  xl:px-30 max-xl:px-8 sm:py-20 py-12 flex flex-col justify-center items-center gap-2 max-sm:gap-5 mb-30'>
         <h1 className='playfair-display-400 text-center leading-none text-oliv-07 max-lg:text-[75px] max-sm:text-[60px] text-[90px]'>
           Our Menu
         </h1>
@@ -120,6 +119,8 @@ function Menu({cart}) {
               <MenuItemsCart
                 key={item._id}
                 {...item}
+                loadCart={loadCart}
+                addToCart={addToCart}
               />
             ))
           }

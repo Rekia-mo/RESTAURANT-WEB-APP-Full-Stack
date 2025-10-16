@@ -11,11 +11,12 @@ import Orders from './pages/Orders';
 
 function App() {
   const [cart, setCart] = useState(null);
-  const API_BASE_URL = 'http://localhost:3000/api/cart';
+
 
 
   const loadCart = async () => {
     try {
+      const API_BASE_URL = 'http://localhost:3000/api/cart';
       const token = localStorage.getItem('token');
 
       const API_OPTIONS = {
@@ -47,15 +48,38 @@ function App() {
 
   useEffect(() => {
     loadCart();
-  }, [])
+  }, []);
+
+  const addToCart = async (id) => {
+    try {
+      const API_BASE_URL = `http://localhost:3000/api/cart`;
+      const token = localStorage.getItem('token');
+
+      const response = await fetch(API_BASE_URL, {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+          "x-auth-token": `Bearer ${token}`,
+          accept: 'application/json'
+        },
+        body: JSON.stringify({ menuItemId: id, quantity: 1 })
+      });
+
+      if (!response.ok) throw new Error('faid to log in');
+
+      loadCart();
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   return (
     <>
       <Routes>
         <Route index element={<MainPg />} />
-        <Route path='/menu' element={<Menu cart={cart}/>} />
-        <Route path='/checkOut' element={<CheckOut cart={cart}/>} />
-        <Route path='/orders' element={<Orders cart={cart}/>} />
+        <Route path='/menu' element={<Menu cart={cart} loadCart={loadCart} addToCart={addToCart} />} />
+        <Route path='/checkOut' element={<CheckOut cart={cart} loadCart={loadCart} />} />
+        <Route path='/orders' element={<Orders cart={cart} addToCart={addToCart} />} />
         <Route path='/signUp' element={<SignUp />} />
         <Route path='/logIn' element={<LogIn />} />
       </Routes>

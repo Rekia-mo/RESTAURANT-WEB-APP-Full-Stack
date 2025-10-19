@@ -40,7 +40,7 @@ router.post('/', log, async (req, res) => {
     for (field in ex.errors)
       res.json({ 'messge': ex.errors[field].message });
   }
-})
+});
 
 //GET ORDERS BY USER ID 
 router.get('/', log, async(req, res) => {
@@ -76,6 +76,7 @@ router.delete('/',log ,async (req,res)=>{
     for (field in ex.errors)
       res.json({ 'messge': ex.errors[field].message });
   }
-})
+});
+//add cruds for ADMIN
 
 module.exports = router;

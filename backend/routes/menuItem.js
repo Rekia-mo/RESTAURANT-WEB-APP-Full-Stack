@@ -19,7 +19,7 @@ router.get('/', log, async (req, res) => {
   }
 });
 
-//GET ITEMS CATEGORIES
+//GET ITEMS CATEGORIES (NOT USED)
 router.get('/:catId', log, async (req, res) => {
   try {
     const { catId } = req.params;
@@ -40,4 +40,6 @@ router.get('/:catId', log, async (req, res) => {
       res.json({ 'messge': ex.errors[field].message });
   }
 });
+
+//add cruds for ADMIN
 module.exports = router;

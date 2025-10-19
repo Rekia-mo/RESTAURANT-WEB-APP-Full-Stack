@@ -145,7 +145,7 @@ router.delete('/:menuItemId', log, async (req, res) => {
   }    
 })
 
-//DELETE ALL ITEMS
+//DELETE ALL ITEMS (NOT USED)
 router.delete('/', log, async (req, res) => {
   try {
     const userId = await req.user._id;

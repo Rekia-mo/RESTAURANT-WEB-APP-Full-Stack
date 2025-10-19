@@ -13,5 +13,6 @@ router.get('/', async(req, res)=>{
     res.json({'messge':ex.errors[field].message});
   }
 });
+//add cruds for ADMIN
 
 module.exports = router;

@@ -7,7 +7,7 @@ import Menu from './pages/Menu';
 import LogIn from './pages/LogIn'
 import CheckOut from './pages/CheckOut';
 import Orders from './pages/Orders';
-import AdminApp from './admin/AdminApp';
+import Page from './app/dashboard/Page';
 import ProtectedRoute from './components/ProtectedRoute';
 import { useNavigate } from 'react-router-dom';
 
@@ -81,7 +81,7 @@ function App() {
           path='/DashBoard'
           element={
             <ProtectedRoute>
-              <AdminApp />
+              <Page />
             </ProtectedRoute>
           } />
 

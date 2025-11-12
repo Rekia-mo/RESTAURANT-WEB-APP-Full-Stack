@@ -64,7 +64,7 @@ router.get('/', log, async (req, res) => {
 
     let cart = await Cart.findOne({ userId: userId }).populate('items.menuItem');
 
-    if (!cart) return res.status(404).send('Cart not founded');
+    if (!cart) return res.send('Cart not founded');
 
     res.json({
       success: true,
@@ -76,7 +76,7 @@ router.get('/', log, async (req, res) => {
   }
 
 });
-
+ 
 //UPDATE ONE ITEM
 router.put('/:menuItemId', log, async (req, res) => {
   try {
@@ -172,5 +172,5 @@ router.delete('/', log, async (req, res) => {
      for (field in ex.error)
       res.json({ 'messge': ex.errors[field].message });
   }    
-})
+}) 
 module.exports = router;

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode';
 
 const API_BASE_URL = 'http://localhost:3000/api/user';
 
@@ -45,7 +46,9 @@ function SignUp() {
       }
       
       localStorage.setItem("token", data.token);
-      
+
+      localStorage.setItem("user", JSON.stringify(jwtDecode(data.token)));
+
       navigate('/menu')
     }catch(err){
       console.log(err);

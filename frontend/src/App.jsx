@@ -7,12 +7,13 @@ import Menu from './pages/Menu';
 import LogIn from './pages/LogIn'
 import CheckOut from './pages/CheckOut';
 import Orders from './pages/Orders';
+import AdminApp from './admin/AdminApp';
+import ProtectedRoute from './components/ProtectedRoute';
+import { useNavigate } from 'react-router-dom';
 
 
 function App() {
   const [cart, setCart] = useState(null);
-
-
 
   const loadCart = async () => {
     try {
@@ -37,18 +38,12 @@ function App() {
 
 
     } catch (err) {
+      console.error("Error loading cart:", err.message);
 
-      console.log(err);
-
-      if (err.message.includes("invalid token")) {
-        navigate('/signUp')
-      }
+      alert("Something went wrong while loading your cart. Please try again.");
     }
   }
 
-  useEffect(() => {
-    loadCart();
-  }, []);
 
   const addToCart = async (id) => {
     try {
@@ -82,6 +77,14 @@ function App() {
         <Route path='/orders' element={<Orders cart={cart} addToCart={addToCart} />} />
         <Route path='/signUp' element={<SignUp />} />
         <Route path='/logIn' element={<LogIn />} />
+        <Route
+          path='/DashBoard'
+          element={
+            <ProtectedRoute>
+              <AdminApp />
+            </ProtectedRoute>
+          } />
+
       </Routes>
     </>
   )

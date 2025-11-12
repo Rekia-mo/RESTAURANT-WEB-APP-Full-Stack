@@ -6,6 +6,6 @@ module.exports = function admin(req, res, next) {
     next();
   } catch (err) {
     console.log(err);
-    res.status(500).send('Something went wrong.');
+    res.status(403).json({ message: 'Forbidden' });
   }
 };

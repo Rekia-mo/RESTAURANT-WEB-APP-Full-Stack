@@ -3,6 +3,7 @@ import CartItems from '../components/CartItems';
 import { formatMoney } from '../utils/money';
 import { quantityCount } from '../utils/qtt';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function CheckOut({ cart, loadCart }) {
   const API_BASE_URL = 'http://localhost:3000/api/order';
@@ -35,6 +36,10 @@ function CheckOut({ cart, loadCart }) {
     }
 
   }
+
+  useEffect(() => {
+    loadCart();
+  }, []);
   return (
     <>
       <Nav cart={cart} />
@@ -84,8 +89,8 @@ function CheckOut({ cart, loadCart }) {
               </div>
             </div>
 
-            <button className='bg-rouge-brick text-white  px-17 py-2  active:opacity-90 text-[15px] hover:opacity-70 font-bold rounded-4xl transition duration-200 ease-in-out cursor-pointer mt-1 shadow-md shadow-rouge-brick/30 ' 
-            onClick={placeOrder}>
+            <button className='bg-rouge-brick text-white  px-17 py-2  active:opacity-90 text-[15px] hover:opacity-70 font-bold rounded-4xl transition duration-200 ease-in-out cursor-pointer mt-1 shadow-md shadow-rouge-brick/30 '
+              onClick={placeOrder}>
               Place your order
             </button>
           </div>

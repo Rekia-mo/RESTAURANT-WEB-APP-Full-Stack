@@ -4,7 +4,7 @@ import { useNavigate, Outlet, useLocation, Link } from 'react-router-dom';
 import cartImage from '../assets/icons/serving.png'
 import { quantityCount } from '../utils/qtt';
 
-function Nav({cart}) {
+function Nav({ cart }) {
   let totalQuantity = quantityCount(cart);
 
   const navLinks = [
@@ -17,6 +17,8 @@ function Nav({cart}) {
   const navigate = useNavigate();
 
   const location = useLocation();
+
+  const user = JSON.parse(localStorage.getItem('user'))
 
   return (
     <>
@@ -44,6 +46,17 @@ function Nav({cart}) {
                 </a>
               </li>
             ))}
+            {
+              (user && user.role === 'admin') &&
+              <li
+                className='hover:bg-[#DBDFD0] flex justify-center items-center transition duration-300 ease-in-out text-[14px] py-1 px-4 rounded-4xl'>
+                <a href={'/DashBoard'}>
+                  {'Admin DashBoard'}
+                </a>
+              </li>
+
+            }
+
           </ul>
 
           {(location.pathname === '/') &&

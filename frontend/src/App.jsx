@@ -10,6 +10,9 @@ import Orders from './pages/Orders';
 import Page from './app/dashboard/Page';
 import ProtectedRoute from './components/ProtectedRoute';
 import { useNavigate } from 'react-router-dom';
+import NavOrders from './admin/pages/NavOrdes';
+import NavMenu from './admin/pages/NavMenu';
+import NavUsers from './admin/pages/NavUsers';
 
 
 function App() {
@@ -83,8 +86,11 @@ function App() {
             <ProtectedRoute>
               <Page />
             </ProtectedRoute>
-          } />
-
+          }>
+            <Route path='orders' element={<NavOrders/>}/>
+            <Route path='menu' element={<NavMenu/>}/>
+            <Route path='users' element={<NavUsers/>}/>
+          </Route>
       </Routes>
     </>
   )

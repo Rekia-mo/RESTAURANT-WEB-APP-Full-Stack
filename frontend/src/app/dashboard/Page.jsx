@@ -1,16 +1,20 @@
-import { AppSidebar } from '@/admin/components/app-sidebar'
-import { ChartAreaInteractive } from "@/admin/components/chart-area-interactive"
-import { DataTable } from "@/admin/components/data-table"
-import { SectionCards } from "@/admin/components/section-cards"
-import { SiteHeader } from "@/admin/components/site-header"
+import { AppSidebar } from '@/admin/components/app-sidebar';
+import { ChartAreaLinear } from "@/admin/components/ChartAreaLinear";
+import { DataTable } from "@/admin/components/data-table";
+import { SectionCards } from "@/admin/components/section-cards";
+import { SiteHeader } from "@/admin/components/site-header";
 import {
   SidebarInset,
   SidebarProvider,
-} from "@/admin/components/ui/sidebar"
+} from "@/admin/components/ui/sidebar";
+import { Outlet, useLocation } from 'react-router-dom';
+import data from "./data.json";
 
-import data from "./data.json"
 
 function Page() {
+  const location = useLocation();
+
+  const isDashboardHome = location.pathname === '/DashBoard';
   return (
     <SidebarProvider
       style={
@@ -26,11 +30,19 @@ function Page() {
         <div className="flex flex-1 flex-col">
           <div className="@container/main flex flex-1 flex-col gap-2">
             <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
-              <SectionCards />
-              <div className="px-4 lg:px-6">
-                <ChartAreaInteractive />
-              </div>
-              <DataTable data={data} />
+              {
+                isDashboardHome &&
+                <>
+                
+                  <SectionCards />
+                  <div className="px-4 lg:px-6">
+                    <ChartAreaLinear />
+                  </div>
+                  <DataTable data={data} />
+                
+                </>
+              }
+              <Outlet />
             </div>
           </div>
         </div>

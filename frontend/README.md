@@ -1,12 +1,27 @@
-# React + Vite
+# RESTAURANT WEB APP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack restaurant web application that allows customers to browse the menu, add dishes to a cart, and complete orders. Admins can manage menu items and view orders. Fully responsive and optimized for mobile and desktop.
 
-Currently, two official plugins are available:
+## Features
+- Customer signup/login
+- Add items to cart and checkout
+- Admin panel (add/edit/delete menu items & categories)
+- View past orders
+- Responsive design
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwind-css&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=json-web-tokens&logoColor=white)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Live Demo
+[View Demo](your-live-demo-link)
+
+## GitHub
+[Source Code](your-github-link)
+
